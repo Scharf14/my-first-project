@@ -1,5 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
-  font-family: Arial, sans-serif; /* Sets the font for the entire body */
-  background-color: #f0f0f0; /* Sets the background color */
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: white;
 }
+
+a {
+    text-decoration: none; /*убрал нижнее подчеркивание для всех ссылок*/
+}
+
+img {
+    max-width: 100%; /*написал ограничение для изображений, чтобы они не вылазили за пределы своего блока 8*/
+}
+/*До этого были описаны базовые стили для сайта*/
+
+.wrapper {
+    width: 100%;
+    background: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(74, 40, 0, 1) 100%);
+}
+
+.container {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 50px 0;
+}
+
+header .logo {
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 800;
+}
+
+header nav {
+    float: right;
+    width: 50%;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul li a{
+    color: white;
+}
+
+header nav ul li:not(.active):not(.btn) a:hover {
+    border-bottom: 5px solid #DC7000;
+} /*Обращаемся ко всем элементам li в ul, кроме тех, что являются классами btn и active*/
+
+header nav ul li.active::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 5px;
+    background: #DC7000;
+    border-radius: 10px;
+    position: relative;
+    top: 30px;
+    left: -15px;
+}
+
+header nav ul li.btn a {
+    background: #FA9021;
+    padding: 9px 17px;
+    border-radius: 10px;
+    transition: all 500ms ease;
+} /*Обращаемся к элементам-классам btn, которые являются ссылками*/
+
+header nav ul li.btn a:hover {
+    background: red;
+} /*Обращаюсь ко всем элементам li, содержащие класс btn, чтобы при наведении на элементы ссылки - цвет блока менялся.*/
+
+header nav ul li.active::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 5px;
+    background: #DC7000;
+    border-radius: 10px;
+    position: relative;
+    top: 10авваавpx;
+    left: -15px;
+} /*Создаю псевдоэлемент*/
