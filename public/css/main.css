@@ -14,13 +14,12 @@ body {
 }
 
 a {
-    text-decoration: none; /*убрал нижнее подчеркивание для всех ссылок*/
+    text-decoration: none;
 }
 
 img {
-    max-width: 100%; /*написал ограничение для изображений, чтобы они не вылазили за пределы своего блока 8*/
+    max-width: 100%;
 }
-/*До этого были описаны базовые стили для сайта*/
 
 .wrapper {
     width: 100%;
@@ -61,18 +60,18 @@ header nav ul li a{
 
 header nav ul li:not(.active):not(.btn) a:hover {
     border-bottom: 5px solid #DC7000;
-} /*Обращаемся ко всем элементам li в ul, кроме тех, что являются классами btn и active*/
+}
 
 header nav ul li.btn a {
     background: #FA9021;
     padding: 9px 17px;
     border-radius: 10px;
     transition: background-color 500ms ease;
-} /*Обращаемся к элементам-классам btn, которые являются ссылками*/
+}
 
 header nav ul li.btn a:hover {
     background-color: red;
-} /*Обращаюсь ко всем элементам li, содержащие класс btn, чтобы при наведении на элементы ссылки - цвет блока менялся.*/
+}
 
 header nav ul li.active::after {
     content: '';
@@ -84,7 +83,7 @@ header nav ul li.active::after {
     position: relative;
     top: 10px;
     left: -15px;
-} /*Создаю псевдоэлемент*/
+} /*псевдоэлемент*/
 
 .hero {
     padding-bottom: 100px;
@@ -110,7 +109,7 @@ header nav ul li.active::after {
 .hero--info p {
     font-weight: 500;
     margin: 30px 0px;
-    line-height: 170%; /*отступ между строками */
+    line-height: 170%;
 }
 
 .hero--info .btn {
@@ -135,4 +134,45 @@ header nav ul li.active::after {
     z-index: 1;
 }
 
+/*раздел с играми*/
+.trending {
+    padding-top: 50px;
+}
+.trending h3 {
+    font-size: 31px;
+    font-weight: bold;
+}
+
+.trending .see-all {
+    padding: 12px 23px;
+    color: white;
+    background: #25211D;
+    border-radius: 10px;
+    float: right;
+    display: block;
+    transition: transform 500ms ease;
+}
+
+.trending .see-all:hover {
+    transform: scale(1.1);
+}
+
+.trending .games {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px 0;
+}
+
+.trending .games span {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.trending .games span img {
+    position: relative;
+    top: 5px;
+    margin-right: 7px;
+}
 
