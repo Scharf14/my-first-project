@@ -143,7 +143,7 @@ header nav ul li.active::after {
     font-weight: bold;
 }
 
-.trending .see-all {
+.trending .see-all, .projects .see-all {
     padding: 12px 23px;
     color: white;
     background: #25211D;
@@ -153,7 +153,7 @@ header nav ul li.active::after {
     transition: transform 500ms ease;
 }
 
-.trending .see-all:hover {
+.trending .see-all:hover, .projects .see-all:hover {
     transform: scale(1.1);
 }
 
@@ -206,8 +206,63 @@ header nav ul li.active::after {
 }
 
 .features {
-    background: url("../img/background.png") no-repeat center center;
+    background: url("../img/background.png") no-repeat center center fixed;
     background-size: cover;
-    
+    padding: 80px;
 }
+
+.features h3, .features p {
+    margin-bottom: 20px;
+    max-width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features h3 {
+    font-size: 30px;
+}
+
+.features .info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.features .info .block {
+    text-align: center;
+    width: 20%;
+    margin: 30px 2%;
+}
+
+.features .info .block img {
+    margin-bottom: 15px;
+}
+
+.projects {
+    padding: 100px 0;
+}
+
+.projects h3 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.projects p {
+    margin: 40px;
+    text-align: center;
+}
+
+.projects .images {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+
+.projects .see-all {
+    float: none;
+    width: 60px;
+    text-align: center;
+    margin: 0 auto;
+}
+
 
