@@ -35,7 +35,8 @@ header {
     padding: 50px 0;
 }
 
-header .logo {
+header .logo,
+footer .blocks .logo {
     text-transform: uppercase;
     font-size: 29px;
     font-weight: 800;
@@ -62,14 +63,16 @@ header nav ul li:not(.active):not(.btn) a:hover {
     border-bottom: 5px solid #DC7000;
 }
 
-header nav ul li.btn a, .email .block button {
+header nav ul li.btn a,
+.email .block button {
     background: #FA9021;
     padding: 9px 17px;
     border-radius: 10px;
     transition: background-color 500ms ease;
 }
 
-header nav ul li.btn a:hover, .email .block button:hover {
+header nav ul li.btn a:hover,
+.email .block button:hover {
     background-color: red;
 }
 
@@ -322,4 +325,44 @@ header nav ul li.active::after {
     z-index: 2;
 }
 
+/* Footer */
 
+footer {
+    background: #070707;
+    padding: 50px 0;
+}
+
+footer .blocks {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .blocks p {
+    width: 300px;
+    margin: 15px 0;
+}
+
+footer .blocks h4 {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+footer .blocks ul {
+    list-style: none;
+}
+
+footer .blocks ul li {
+    margin-top: 7px;
+    opacity: 0.7;
+}
+
+footer hr {
+    margin: 30px 0;
+    border: 0;
+    height: 0.6px;
+    background: #CCCC;
+}
+
+footer > p {
+    text-align: center;
+}
