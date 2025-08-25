@@ -205,3 +205,9 @@ header nav ul li.active::after {
     margin-bottom: 30px;
 }
 
+.features {
+    background: url("../img/background.png") no-repeat center center;
+    background-size: cover;
+    
+}
+
