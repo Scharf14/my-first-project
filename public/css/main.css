@@ -62,14 +62,14 @@ header nav ul li:not(.active):not(.btn) a:hover {
     border-bottom: 5px solid #DC7000;
 }
 
-header nav ul li.btn a {
+header nav ul li.btn a, .email .block button {
     background: #FA9021;
     padding: 9px 17px;
     border-radius: 10px;
     transition: background-color 500ms ease;
 }
 
-header nav ul li.btn a:hover {
+header nav ul li.btn a:hover, .email .block button:hover {
     background-color: red;
 }
 
@@ -263,6 +263,63 @@ header nav ul li.active::after {
     width: 60px;
     text-align: center;
     margin: 0 auto;
+}
+
+.email {
+    padding-bottom: 120px;
+}
+
+.email h3 {
+    margin-top: 60px;
+    font-size: 30px;
+}
+
+.email .block {
+    background: #1C140F;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 40px 3%;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email .block h4 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.email .block p {
+    width: 500px;
+}
+
+.email .block input {
+    background: white;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    width: 380px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    padding: 20px 30px;
+    position: relative;
+    right: -105px;
+    z-index: 1;
+    padding-right: 130px;
+}
+
+.email .block input::placeholder {
+    color: #898989;
+}
+
+.email .block button {
+    cursor: pointer;
+    border: none;
+    padding: 13px 17px;
+    color: white;
+    position: relative;
+    z-index: 2;
 }
 
 
