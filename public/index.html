@@ -36,19 +36,35 @@
         <h3>Currently Trending Games</h3>
         <div class="games">
             <div class="block">
-                <img src="./img/game1.png" alt="">
+                <img id="first-game-id" src="./img/game1.png" alt="">
+                <div id="first-game" class="description">
+                    <h4>3 dudes</h4>
+                    <p>these are three dudes</p>
+                </div>
                 <span><img src="./img/fire.svg" alt="">40 followers</span>
             </div>
             <div class="block">
-                <img src="./img/game2.png" alt="">
+                <img id="second-game-id" src="./img/game2.png" alt="">
+                <div id="second-game" class="description">
+                    <h4>Women</h4>
+                    <p>...and dragon</p>
+                </div>
                 <span><img src="./img/fire.svg" alt="">40 followers</span>
             </div>
             <div class="block">
-                <img src="./img/game3.png" alt="">
+                <img id="third-game-id" src="./img/game3.png" alt="">
+                <div id="third-game" class="description">
+                    <h4>Man</h4>
+                    <p>...and gun</p>
+                </div>
                 <span><img src="./img/fire.svg" alt="">40 followers</span>
             </div>
             <div class="block">
-                <img src="./img/game4.png" alt="">
+                <img id="fourth-game-id" src="./img/game4.png" alt="">
+                <div id="fourth-game" class="description">
+                    <h4>stray</h4>
+                    <p>game about a cat</p>
+                </div>
                 <span><img src="./img/fire.svg" alt="">40 followers</span>
             </div>
         </div>
@@ -170,11 +186,56 @@
     const arrow = document.querySelector('.arrow-up');
 
     window.addEventListener('scroll', function () {
-        console.log(pageYOffset);
         if (pageYOffset >= 2000) {
             arrow.style.display = 'inline';
         }
     });
+
+    const firstGameIdId = document.getElementById('first-game-id');
+    const secondGameId = document.getElementById('second-game-id');
+    const thirdGameId = document.getElementById('third-game-id');
+    const fourthGameId = document.getElementById('fourth-game-id');
+
+    const firstGame = document.getElementById('first-game');
+    const secondGame = document.getElementById('second-game');
+    const thirdGame = document.getElementById('third-game');
+    const fourthGame = document.getElementById('fourth-game');
+
+    firstGameIdId.addEventListener('click', function () {
+        firstGame.style.display = 'block';
+    });
+
+    secondGameId.addEventListener('click', function () {
+        secondGame.style.display = 'block';
+    });
+
+    thirdGameId.addEventListener('click', function () {
+        thirdGame.style.display = 'block';
+    });
+
+    fourthGameId.addEventListener('click', function () {
+        fourthGame.style.display = 'block';
+    });
+
+    firstGame.addEventListener('click', function () {
+       firstGame.style.display = 'none';
+    });
+
+    secondGame.addEventListener('click', function () {
+        secondGame.style.display = 'none';
+    });
+
+    thirdGame.addEventListener('click', function () {
+        thirdGame.style.display = 'none';
+    });
+
+    fourthGame.addEventListener('click', function () {
+        fourthGame.style.display = 'none';
+    });
+
+
+
+
 
 
 

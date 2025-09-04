@@ -181,6 +181,13 @@ header nav ul li.active::after {
     margin-right: 7px;
 }
 
+.trending .description {
+    padding: 20px 20px;
+    background: #25211D;
+    border-radius: 10px;
+    display: none;
+}
+
 .big-text {
     font-size: 50px;
     font-weight: bold;
