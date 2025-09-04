@@ -59,8 +59,8 @@
     <div class="container banner">
         <h3>Lorem Ipsum</h3>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-        <img src="./img/banner.png" alt="">
     </div>
+
 </div>
 <div class="features">
     <div class="container">
@@ -98,6 +98,9 @@
                <img src="./img/pointer.png" alt="">
            </div>
         </div>
+        <a href="index.html">
+            <img src="./img/pointer.png" alt="" class="arrow-up">
+        </a>
     </div>
 </div>
 <div class="wrapper">
@@ -116,7 +119,6 @@
         </div>
         <a href="#" class="see-all">SEE ALL</a>
     </div>
-
     <div class="container email">
         <h3>Lorem Ipsum</h3>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
@@ -160,10 +162,23 @@
 <script>
     function checkEmail() {
         let email = document.querySelector('#emailField').value;
-        if(!email.includes('@')) alert('Нет символа @');
+        if (!email.includes('@')) alert('Нет символа @');
         else if (!email.includes('.')) alert('Нет символа .');
         else alert('Успешно!');
     }
+
+    const arrow = document.querySelector('.arrow-up');
+
+    window.addEventListener('scroll', function () {
+        console.log(pageYOffset);
+        if (pageYOffset >= 2000) {
+            arrow.style.display = 'inline';
+        }
+    });
+
+
+
+
 </script>
 </body>
 </html>
