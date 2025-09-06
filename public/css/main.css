@@ -181,11 +181,15 @@ header nav ul li.active::after {
     margin-right: 7px;
 }
 
-.trending .description {
+.description {
     padding: 20px 20px;
     background: #25211D;
     border-radius: 10px;
     display: none;
+}
+
+.active {
+    display: block;
 }
 
 .big-text {
@@ -222,11 +226,13 @@ header nav ul li.active::after {
     padding: 80px;
 }
 
-.features .arrow-up{
-    position: absolute;
-    right: 100px;
+.arrow-up{
+    position: fixed;
     transform: rotate(-90deg);
-    display: none;
+    top: 70%;
+    right: 5%;
+    display:none;
+    width: 1%;
 }
 
 .features h3, .features p {

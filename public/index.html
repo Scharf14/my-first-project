@@ -9,6 +9,9 @@
     <title>Home</title>
 </head>
 <body>
+<a href="index.html">
+    <img src="./img/pointer.png" alt="" class="arrow-up">
+</a>
 <div class="wrapper">
     <header class="container">
         <span class="logo">logo</span>
@@ -34,40 +37,7 @@
     <div class="container trending">
         <a href="#" class="see-all">SEE ALL</a>
         <h3>Currently Trending Games</h3>
-        <div class="games">
-            <div class="block">
-                <img id="first-game-id" src="./img/game1.png" alt="">
-                <div id="first-game" class="description">
-                    <h4>3 dudes</h4>
-                    <p>these are three dudes</p>
-                </div>
-                <span><img src="./img/fire.svg" alt="">40 followers</span>
-            </div>
-            <div class="block">
-                <img id="second-game-id" src="./img/game2.png" alt="">
-                <div id="second-game" class="description">
-                    <h4>Women</h4>
-                    <p>...and dragon</p>
-                </div>
-                <span><img src="./img/fire.svg" alt="">40 followers</span>
-            </div>
-            <div class="block">
-                <img id="third-game-id" src="./img/game3.png" alt="">
-                <div id="third-game" class="description">
-                    <h4>Man</h4>
-                    <p>...and gun</p>
-                </div>
-                <span><img src="./img/fire.svg" alt="">40 followers</span>
-            </div>
-            <div class="block">
-                <img id="fourth-game-id" src="./img/game4.png" alt="">
-                <div id="fourth-game" class="description">
-                    <h4>stray</h4>
-                    <p>game about a cat</p>
-                </div>
-                <span><img src="./img/fire.svg" alt="">40 followers</span>
-            </div>
-        </div>
+        <div class="games"></div>
     </div>
     <div class="container big-text">
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -75,8 +45,6 @@
     <div class="container banner">
         <h3>Lorem Ipsum</h3>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-    </div>
-
 </div>
 <div class="features">
     <div class="container">
@@ -114,9 +82,6 @@
                <img src="./img/pointer.png" alt="">
            </div>
         </div>
-        <a href="index.html">
-            <img src="./img/pointer.png" alt="" class="arrow-up">
-        </a>
     </div>
 </div>
 <div class="wrapper">
@@ -175,6 +140,7 @@
     <hr>
     <p>Copyright ® 2021 Lorem All rights Reserved</p>
 </footer>
+</div>
 <script>
     function checkEmail() {
         let email = document.querySelector('#emailField').value;
@@ -186,56 +152,68 @@
     const arrow = document.querySelector('.arrow-up');
 
     window.addEventListener('scroll', function () {
-        if (pageYOffset >= 2000) {
+        if (pageYOffset >= 200) {
             arrow.style.display = 'inline';
         }
     });
 
-    const firstGameIdId = document.getElementById('first-game-id');
-    const secondGameId = document.getElementById('second-game-id');
-    const thirdGameId = document.getElementById('third-game-id');
-    const fourthGameId = document.getElementById('fourth-game-id');
+    const games = [
+        {
+        path: './img/game1.png',
+        id: 1,
+            description: 'dfdfdf',
+        likes: 0
+    },{
+        path: './img/game2.png',
+        id: 2,
+        description: '..',
+        likes: 0
+    },{
+        path: './img/game3.png',
+        id: 3,
+        description: '..',
+        likes: 0
+    },{
+        path: './img/game4.png',
+        id: 4,
+        description: '..',
+        likes: 0
+    },
+    ];
 
-    const firstGame = document.getElementById('first-game');
-    const secondGame = document.getElementById('second-game');
-    const thirdGame = document.getElementById('third-game');
-    const fourthGame = document.getElementById('fourth-game');
+    const gamesContainer = document.querySelector('.games');
 
-    firstGameIdId.addEventListener('click', function () {
-        firstGame.style.display = 'block';
-    });
+    function renderGames(){
+        games.forEach((game) => {
+            gamesContainer.insertAdjacentHTML('afterbegin', '<div class="block">\n' +
+                '                <img class="game-card" src="'+ game.path +'" alt="">\n' +
+                '                <div class="description">\n' +
+                '                    <p>' + game.description +'</p>\n' +
+                '                </div>\n' +
+                '                <span id="likes-'+ game.id +'"><img src="img/fire.svg" alt=""> <p id="likes-par'+ game.id +'"> '+ game.likes +'</p>likes</span>\n' +
+                '            </div>');
+        })
+    }
+    renderGames();
+    games.forEach((game) => {
+        const likes = document.querySelector('#likes-'+ game.id);
+        const likesPar = document.querySelector('#likes-par' + game.id);
+        likes.addEventListener('click', (likeElem) => {
+            game.likes += 1;
+            likesPar.innerHTML = game.likes;
+            console.log(game.likes);
+        })
+    })
 
-    secondGameId.addEventListener('click', function () {
-        secondGame.style.display = 'block';
-    });
+    const gameCards = document.querySelectorAll('.game-card');
+    const description = document.querySelectorAll('.description');
+    const images = document.querySelectorAll('.trending .games .block img:not(span img)');
 
-    thirdGameId.addEventListener('click', function () {
-        thirdGame.style.display = 'block';
-    });
-
-    fourthGameId.addEventListener('click', function () {
-        fourthGame.style.display = 'block';
-    });
-
-    firstGame.addEventListener('click', function () {
-       firstGame.style.display = 'none';
-    });
-
-    secondGame.addEventListener('click', function () {
-        secondGame.style.display = 'none';
-    });
-
-    thirdGame.addEventListener('click', function () {
-        thirdGame.style.display = 'none';
-    });
-
-    fourthGame.addEventListener('click', function () {
-        fourthGame.style.display = 'none';
-    });
-
-
-
-
+    gameCards.forEach((card, i) => {
+        card.addEventListener('click', () => {
+            description[i].classList.toggle('active');
+        })
+    })
 
 
 
