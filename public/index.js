@@ -103,7 +103,7 @@ cards = [
     let lastCardIndex = 0;
     function renderCards() {
         for(let i = 0; i <= lastCardIndex; i++) {
-            cardsContainer.insertAdjacentHTML('afterbegin', '<img src="'+ cards[i].path +'" alt="">')
+            cardsContainer.insertAdjacentHTML('beforeend', '<img src="'+ cards[i].path +'" alt="">')
         }
     }
 
