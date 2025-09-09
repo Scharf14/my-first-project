@@ -570,3 +570,12 @@ footer > p {
     background: #25211D;
     border-radius: 10px;
 }
+
+.projects .images {
+    justify-content: space-around;
+    margin-bottom: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 40px;
+}

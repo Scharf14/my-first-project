@@ -96,21 +96,47 @@ cards = [
         path: './img/project6.png',
         id: 5
     },
+    {
+        path: './img/project7.png',
+        id: 5
+    },
+    {
+        path: './img/project8.png',
+        id: 5
+    },
+    {
+        path: './img/project9.png',
+        id: 5
+    },
+    {
+        path: './img/project10.png',
+        id: 5
+    },
+    {
+        path: './img/project11.png',
+        id: 5
+    },
+    {
+        path: './img/project12.png',
+        id: 5
+    },
+
 ];
 
     const cardsContainer = document.querySelector('.images');
     const viewMoreButton = document.querySelector('.view-more');
-    let lastCardIndex = 0;
+    let lastCardIndex = 2;
     function renderCards() {
         for(let i = 0; i <= lastCardIndex; i++) {
             cardsContainer.insertAdjacentHTML('beforeend', '<img src="'+ cards[i].path +'" alt="">')
         }
     }
 
+    renderCards();
 
     viewMoreButton.addEventListener('click', () => {
         cardsContainer.innerHTML = '';
-        lastCardIndex += 1;
+        lastCardIndex += 3;
         renderCards()
     })
 
