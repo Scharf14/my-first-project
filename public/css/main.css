@@ -558,3 +558,15 @@ footer > p {
 .feedback form button:hover {
     background: #b01414;
 }
+
+.view-button {
+    display: flex;
+    justify-content: center;
+}
+
+.view-more {
+    padding: 12px 23px;
+    color: white;
+    background: #25211D;
+    border-radius: 10px;
+}

@@ -1,0 +1,145 @@
+function checkEmail() {
+    let email = document.querySelector('#emailField').value;
+    if (!email.includes('@')) alert('Нет символа @');
+    else if (!email.includes('.')) alert('Нет символа .');
+    else alert('Успешно!');
+}
+
+const arrow = document.querySelector('.arrow-up');
+
+window.addEventListener('scroll', function () {
+    if (pageYOffset >= 200) {
+        arrow.style.display = 'inline';
+    }
+});
+
+const games = [
+    {
+        path: './img/game4.png',
+        id: 1,
+        description: '...',
+        likes: 0
+    }, {
+        path: './img/game3.png',
+        id: 2,
+        description: '...',
+        likes: 0
+    }, {
+        path: './img/game2.png',
+        id: 3,
+        description: '...',
+        likes: 0
+    }, {
+        path: './img/game1.png',
+        id: 4,
+        description: '...',
+        likes: 0
+    },
+];
+
+const gamesContainer = document.querySelector('.games');
+
+function renderGames() {
+    games.forEach((game) => {
+        gamesContainer.insertAdjacentHTML('afterbegin', '<div class="block">\n' +
+            '                <img class="game-card" src="' + game.path + '" alt="">\n' +
+            '                <div class="description">\n' +
+            '                    <p>' + game.description + '</p>\n' +
+            '                </div>\n' +
+            '                <span id="likes-' + game.id + '"><img src="img/fire.svg" alt=""> <p id="likes-par' + game.id + '"> ' + game.likes + '</p>likes</span>\n' +
+            '            </div>');
+    })
+}
+
+renderGames();
+games.forEach((game) => {
+    const likes = document.querySelector('#likes-' + game.id);
+    const likesPar = document.querySelector('#likes-par' + game.id);
+    likes.addEventListener('click', (likeElem) => {
+        game.likes += 1;
+        likesPar.innerHTML = game.likes;
+        console.log(game.likes);
+    })
+})
+
+const gameCards = document.querySelectorAll('.game-card');
+const description = document.querySelectorAll('.description');
+
+gameCards.forEach((card, i) => {
+    card.addEventListener('click', () => {
+        description[i].classList.toggle('active');
+    })
+})
+
+cards = [
+    {
+        path: './img/project1.png',
+        id: 0
+    },
+    {
+        path: './img/project2.png',
+        id: 1
+    },
+    {
+        path: './img/project3.png',
+        id: 2
+    },
+    {
+        path: './img/project4.png',
+        id:3
+    },
+    {
+        path: './img/project5.png',
+        id: 4
+    },
+    {
+        path: './img/project6.png',
+        id: 5
+    },
+];
+
+    const cardsContainer = document.querySelector('.images');
+    const viewMoreButton = document.querySelector('.view-more');
+    let lastCardIndex = 0;
+    function renderCards() {
+        for(let i = 0; i <= lastCardIndex; i++) {
+            cardsContainer.insertAdjacentHTML('afterbegin', '<img src="'+ cards[i].path +'" alt="">')
+        }
+    }
+
+
+    viewMoreButton.addEventListener('click', () => {
+        cardsContainer.innerHTML = '';
+        lastCardIndex += 1;
+        renderCards()
+    })
+
+// for(let i = 0; i < currentLastCardIndex; i++) {
+//     const currentCard = cards[i];
+//     cardsContainer.innerHtml = "";
+//     cardsContainer.insertЧототамHtml('afterbegin', вёрстка элемента)
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
