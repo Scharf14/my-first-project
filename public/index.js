@@ -98,27 +98,27 @@ cards = [
     },
     {
         path: './img/project7.png',
-        id: 5
+        id: 6
     },
     {
         path: './img/project8.png',
-        id: 5
+        id: 7
     },
     {
         path: './img/project9.png',
-        id: 5
+        id: 8
     },
     {
         path: './img/project10.png',
-        id: 5
+        id: 9
     },
     {
         path: './img/project11.png',
-        id: 5
+        id: 10
     },
     {
         path: './img/project12.png',
-        id: 5
+        id: 11
     },
 
 ];
@@ -133,18 +133,35 @@ cards = [
     }
 
     renderCards();
+console.log(lastCardIndex);
 
     viewMoreButton.addEventListener('click', () => {
+
+        const cardInputValue = 3;
         cardsContainer.innerHTML = '';
-        lastCardIndex += 3;
+
+        lastCardIndex += cardInputValue;
+
+        if ((lastCardIndex + cardInputValue) >= cards.length) {
+            viewMoreButton.innerHTML = 'collapse'
+        }
+
+        if (lastCardIndex >= cards.length) {
+            cardsContainer.innerHTML = '';
+            lastCardIndex = 2;
+            viewMoreButton.innerHTML = 'view more'
+        }
+
         renderCards()
     })
 
-// for(let i = 0; i < currentLastCardIndex; i++) {
-//     const currentCard = cards[i];
-//     cardsContainer.innerHtml = "";
-//     cardsContainer.insertЧототамHtml('afterbegin', вёрстка элемента)
-// }
+    const dateSelector = document.querySelector('.date');
+    const date = new Date().getFullYear();
+    dateSelector.textContent = date;
+
+
+
+
 
 
 

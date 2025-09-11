@@ -229,7 +229,7 @@ header nav ul li.active::after {
 .arrow-up{
     position: fixed;
     transform: rotate(-90deg);
-    top: 70%;
+    top: 95%;
     right: 5%;
     display:none;
     width: 1%;
@@ -571,6 +571,7 @@ footer > p {
     border-radius: 10px;
 }
 
+
 .projects .images {
     justify-content: space-around;
     margin-bottom: 25px;
@@ -578,4 +579,15 @@ footer > p {
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 40px;
     row-gap: 40px;
+}
+
+.projects .images img {
+    width: 382px;
+    height: 223px;
+    object-fit: fill;
+
+}
+.date-footer {
+    display: flex;
+    justify-content: center;
 }
