@@ -48,7 +48,7 @@ function renderGames() {
             '                </div>\n' +
             '                <span id="likes-' + game.id + '"><img src="img/fire.svg" alt=""> <p id="likes-par' + game.id + '"> ' + game.likes + '</p>likes</span>\n' +
             '            </div>');
-    })
+    });
 }
 
 renderGames();
@@ -59,8 +59,8 @@ games.forEach((game) => {
         game.likes += 1;
         likesPar.innerHTML = game.likes;
         console.log(game.likes);
-    })
-})
+    });
+});
 
 const gameCards = document.querySelectorAll('.game-card');
 const description = document.querySelectorAll('.description');
@@ -68,8 +68,8 @@ const description = document.querySelectorAll('.description');
 gameCards.forEach((card, i) => {
     card.addEventListener('click', () => {
         description[i].classList.toggle('active');
-    })
-})
+    });
+});
 
 cards = [
     {
@@ -128,12 +128,12 @@ cards = [
     let lastCardIndex = 2;
     function renderCards() {
         for(let i = 0; i <= lastCardIndex; i++) {
-            cardsContainer.insertAdjacentHTML('beforeend', '<img src="'+ cards[i].path +'" alt="">')
+            cardsContainer.insertAdjacentHTML('beforeend', '<img src="'+ cards[i].path +'" alt="">');
         }
     }
 
     renderCards();
-console.log(lastCardIndex);
+
 
     viewMoreButton.addEventListener('click', () => {
 
@@ -143,21 +143,24 @@ console.log(lastCardIndex);
         lastCardIndex += cardInputValue;
 
         if ((lastCardIndex + cardInputValue) >= cards.length) {
-            viewMoreButton.innerHTML = 'collapse'
+            viewMoreButton.innerHTML = 'collapse';
         }
 
         if (lastCardIndex >= cards.length) {
             cardsContainer.innerHTML = '';
             lastCardIndex = 2;
-            viewMoreButton.innerHTML = 'view more'
+            viewMoreButton.innerHTML = 'view more';
         }
 
-        renderCards()
+        renderCards();
     })
 
     const dateSelector = document.querySelector('.date');
     const date = new Date().getFullYear();
     dateSelector.textContent = date;
+
+
+
 
 
 

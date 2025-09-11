@@ -497,7 +497,7 @@ footer > p {
     font-size: 30px;
 }
 
-.feedback p {
+.feedback p:not(.warning-text) {
     text-align: center;
     margin-top: 10px;
 }
@@ -591,3 +591,21 @@ footer > p {
     display: flex;
     justify-content: center;
 }
+
+.callus {
+    color: white;
+}
+
+.warning-text {
+    color: red;
+    position: relative;
+    bottom: 15px;
+    font-size: 12px;
+    visibility: hidden;
+}
+
+.show-text {
+    visibility: visible;
+}
+
+
